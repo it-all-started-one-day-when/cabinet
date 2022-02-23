@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="https://faerie.garden/images/plus.png" type="image/x-icon" />
+  <title>
+    faith generator
+  </title>
+  <style>
+    div {
+      width: 1100px;
+      height: 730px;
+      }
+
+    div div {
+      width: 180px;
+      height: 180px;
+      outline: 0px solid;
+      float: left;
+      }
+      button {
+
+        margin-top:10px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    </style>
+    <script>
+    var nIntervId;
+    var checker;
+    var rate=100;
+    var nIntervId;
+    var colorlist=['blue','red','lime'];
+    var colorlisttwo=['DarkBlue','FireBrick','green'];
+    var boxlisttwo=[];
+    var boxlist=['a', 'b', 'c','d','e','f','g','h','i','j','k','l',
+                 'm','n','o','p','q','r','s','t','u','v','w','x', ];
+
+
+    function changeColor() {
+      checker=1;
+      nIntervId = setInterval(myFunction,rate);
+
+    }
+
+    function myFunction() {
+
+
+  boxlist.forEach(flipper);
+
+function flipper(value, index, array) {
+   x = Math.floor((Math.random() * 3));
+   y = Math.floor((Math.random() * 3));
+  document.getElementById(value).style.background=colorlist[x];
+  document.getElementById(value).style.color=colorlist[y];
+}
+
+  boxlisttwo.forEach(flippertwo);
+function flippertwo(value, index, array) {
+  x = Math.floor((Math.random() * 3));
+  document.getElementById(value).style.background=colorlisttwo[x];
+}
+}
+function breaker(){
+var t = Math.floor((Math.random()*7));
+var v = Math.floor((Math.random()*7));
+var i = Math.floor((Math.random()*[boxlist.length]));
+console.log(t,v,i)
+if (t==v){
+//  if (document.getElementById(boxlist[i]).style.background=='red'){
+//    document.getElementById(boxlist[i]).style.background='FireBrick'
+//  } else if (document.getElementById(boxlist[i]).style.background=='blue'){
+//    document.getElementById(boxlist[i]).style.background='DarkBlue'
+//  } else if(document.getElementById(boxlist[i]).style.background=='lime') {
+  //  document.getElementById(boxlist[i]).style.background='green' }
+  boxlisttwo.push(boxlist[i]);
+  boxlist=boxlist.filter(function(item) {
+  return item !== boxlist[i]
+
+})
+
+}
+}
+
+function ratedown() {
+  breaker();
+  if (rate==1600){
+    checker=0;
+    console.log("checker="+checker);
+    clearInterval(nIntervId);
+    }else{
+      rate=(rate*2);
+      clearInterval(nIntervId);
+      console.log("rate="+rate);
+      changeColor();
+      };
+    }
+
+function rateup(){
+  breaker();
+    if (checker==0){
+      changeColor();
+    }else{
+      rate=(rate/2);
+      console.log("rate="+rate);
+      clearInterval(nIntervId);
+      changeColor();
+    }
+  }
+function stopTextColor(){
+
+
+
+  breaker();
+  clearInterval(nIntervId);
+  checker=0;
+}
+function goTextColor(){
+  if(checker==0){
+  breaker();
+  changeColor();
+}else{
+  console.log("im going already!");
+}
+}
+
+    </script>
+</head>
+<body onload="changeColor();">
+  <div>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+    <div id="d"></div>
+    <div id="e"></div>
+    <div id="f"></div>
+    <div id="g"></div>
+    <div id="h"></div>
+    <div id="i"></div>
+    <div id="j"></div>
+    <div id="k"></div>
+    <div id="l"></div>
+    <div id="m"></div>
+    <div id="n"></div>
+    <div id="o"></div>
+    <div id="p"></div>
+    <div id="q"></div>
+    <div id="r"></div>
+    <div style="height:160px;" id="s"></div>
+    <div style="height:160px;" id="t"></div>
+    <div style="height:160px;" id="u"></div>
+    <div style="height:160px;" id="v"></div>
+    <div style="height:160px;" id="w"></div>
+    <div style="height:160px;" id="x"></div>
+
+    <button onclick="stopTextColor();">stop</button>
+    <button onclick="goTextColor();">go</button>
+    <button onclick="ratedown();">v</button>
+    <button onclick="rateup();">^</button>
+    <button onclick="window.location.href = 'https://index-of-works.glitch.me/rgb';">-</button>
+
+
+  </div>
+
+</body>
+</html>

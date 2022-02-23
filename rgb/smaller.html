@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="https://faerie.garden/images/plus.png" type="image/x-icon" />
+  <title>
+      faith generator
+  </title>
+  <style>
+    div {
+      width: 1100px;
+      height: 720px;
+      }
+
+    div div {
+      width: 50px;
+      height: 50px;
+      outline: 0px solid ;
+      float: left;
+      }
+      button {
+
+
+        margin-top:10px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    </style>
+    <script>
+    var nIntervId;
+    var checker;
+    var rate=100;
+    var nIntervId;
+    var colorlist=['blue','red','lime'];
+    var colorlisttwo=['DarkBlue','FireBrick','green'];
+      var boxlist=['a', 'b', 'c','d','e','f','g','h','i','j','k','l',
+                   'm','n','o','p','q','r','s','t','u','v','w','x',
+                   'y','z',
+                   'aa','bb', 'cc','dd','ee','ff','gg','hh','ii','jj',
+                   'kk','ll','mm','nn','oo','pp','qq','rr','ss','tt',
+                   'uu','vv','ww','xx','yy','zz',
+                   'aaa','bbb', 'ccc','ddd','eee','fff','ggg','hhh','iii','jjj',
+                   'kkk','lll','mmm','nnn','ooo','ppp','qqq','rrr','sss','ttt',
+                   'uuu','vvv','www','xxx','yyy','zzz',
+                   'aaaa','bbbb', 'cccc','dddd','eeee','ffff','gggg','hhhh','iiii','jjjj',
+                   'kkkk','llll','mmmm','nnnn','oooo','pppp','qqqq','rrrr','ssss','tttt',
+                   'uuuu','vvvv','wwww','xxxx','yyyy','zzzz',
+                   'aaaaa','bbbbb', 'ccccc','ddddd','eeeee','fffff','ggggg','hhhhh','iiiii','jjjjj',
+                   'kkkkk','lllll','mmmmm','nnnnn','ooooo','ppppp','qqqqq','rrrrr','sssss','ttttt',
+                   'uuuuu','vvvvv','wwwww','xxxxx','yyyyy','zzzzz',
+                   'aaaaaa','bbbbbb','cccccc','dddddd','eeeeee','ffffff','gggggg','hhhhhh','iiiiii','jjjjjj',
+                   'kkkkkk','llllll','mmmmmm','nnnnnn','oooooo','pppppp','qqqqqq','rrrrrr','ssssss','tttttt',
+                   'uuuuuu','vvvvvv','wwwwww','xxxxxx','yyyyyy','zzzzzz',
+                   'aaaaaaa','bbbbbbb','ccccccc','ddddddd','eeeeeee','fffffff','ggggggg','hhhhhhh','iiiiiii','jjjjjjj',
+                   'kkkkkkk','lllllll','mmmmmmm','nnnnnnn','ooooooo','ppppppp','qqqqqqq','rrrrrrr','sssssss','ttttttt',
+                   'uuuuuuu','vvvvvvv','wwwwwww','xxxxxxx','yyyyyyy','zzzzzzz',
+                   'aaaaaaaa','bbbbbbbb','cccccccc','dddddddd','eeeeeeee','ffffffff','gggggggg','hhhhhhhh','iiiiiiii','jjjjjjjj',
+                   'kkkkkkkk','llllllll','mmmmmmmm','nnnnnnnn','oooooooo','pppppppp','qqqqqqqq','rrrrrrrr','ssssssss','tttttttt',
+                   'uuuuuuuu','vvvvvvvv','wwwwwwww','xxxxxxxx','yyyyyyyy','zzzzzzzz',
+                   'aaaaaaaaa','bbbbbbbbb','ccccccccc','ddddddddd','eeeeeeeee','fffffffff','ggggggggg','hhhhhhhhh','iiiiiiiii','jjjjjjjjj',
+                   'kkkkkkkkk','lllllllll','mmmmmmmmm','nnnnnnnnn','ooooooooo','ppppppppp','qqqqqqqqq','rrrrrrrrr','sssssssss','ttttttttt',
+                   'uuuuuuuuu','vvvvvvvvv','wwwwwwwww','xxxxxxxxx','yyyyyyyyy','zzzzzzzzz',
+                   'aaaaaaaaaa','bbbbbbbbbb','cccccccccc','dddddddddd','eeeeeeeeee','ffffffffff','gggggggggg','hhhhhhhhhh','iiiiiiiiii','jjjjjjjjjj',
+                   'kkkkkkkkkk','llllllllll','mmmmmmmmmm','nnnnnnnnnn','oooooooooo','pppppppppp','qqqqqqqqqq','rrrrrrrrrr','ssssssssss','tttttttttt',
+                   'uuuuuuuuuu','vvvvvvvvvv','wwwwwwwwww','xxxxxxxxxx','yyyyyyyyyy','zzzzzzzzzz',
+                   'aaaaaaaaaaa','bbbbbbbbbbb','ccccccccccc','ddddddddddd','eeeeeeeeeee','fffffffffff','ggggggggggg','hhhhhhhhhhh',
+                   'iiiiiiiiiii','jjjjjjjjjjj',
+                   'kkkkkkkkkkk','lllllllllll','mmmmmmmmmmm','nnnnnnnnnnn','ooooooooooo','ppppppppppp','qqqqqqqqqqq','rrrrrrrrrrr',
+                   'sssssssssss','ttttttttttt',
+                   'uuuuuuuuuuu','vvvvvvvvvvv','wwwwwwwwwww','xxxxxxxxxxx','yyyyyyyyyyy','zzzzzzzzzzz',
+                   'aaaaaaaaaaaa','bbbbbbbbbbbb','cccccccccccc','dddddddddddd','eeeeeeeeeeee','ffffffffffff',
+                   'gggggggggggg','hhhhhhhhhhhh','iiiiiiiiiiii','jjjjjjjjjjjj',
+                   'kkkkkkkkkkkk','llllllllllll','mmmmmmmmmmmm','nnnnnnnnnnnn','oooooooooooo','pppppppppppp',
+                   'qqqqqqqqqqqq','rrrrrrrrrrrr','ssssssssssss','tttttttttttt',
+                   'uuuuuuuuuuuu','vvvvvvvvvvvv'
+                    ];
+                    var boxlisttwo=[];
+
+                    function changeColor() {
+                      checker=1;
+                      nIntervId = setInterval(myFunction,rate);
+
+                    }
+
+                    function myFunction() {
+
+
+                  boxlist.forEach(flipper);
+
+                  function flipper(value, index, array) {
+                   x = Math.floor((Math.random() * 3));
+                   y = Math.floor((Math.random() * 3));
+                  document.getElementById(value).style.background=colorlist[x];
+                  document.getElementById(value).style.color=colorlist[y];
+                  }
+
+                  boxlisttwo.forEach(flippertwo);
+                  function flippertwo(value, index, array) {
+                  x = Math.floor((Math.random() * 3));
+                  document.getElementById(value).style.background=colorlisttwo[x];
+                  }
+                  }
+                  function breaker(){
+                  var t = Math.floor((Math.random()*7));
+                  var v = Math.floor((Math.random()*7));
+                  var i = Math.floor((Math.random()*[boxlist.length]));
+                  console.log(t,v,i)
+                  if (t==v){
+                  //  if (document.getElementById(boxlist[i]).style.background=='red'){
+                  //    document.getElementById(boxlist[i]).style.background='FireBrick'
+                  //  } else if (document.getElementById(boxlist[i]).style.background=='blue'){
+                  //    document.getElementById(boxlist[i]).style.background='DarkBlue'
+                  //  } else if(document.getElementById(boxlist[i]).style.background=='lime') {
+                  //  document.getElementById(boxlist[i]).style.background='green' }
+                  boxlisttwo.push(boxlist[i]);
+                  boxlist=boxlist.filter(function(item) {
+                  return item !== boxlist[i]
+
+                  })
+
+                  }
+                  }
+
+                  function ratedown() {
+                  breaker();
+                  if (rate==1600){
+                    checker=0;
+                    console.log("checker="+checker);
+                    clearInterval(nIntervId);
+                    }else{
+                      rate=(rate*2);
+                      clearInterval(nIntervId);
+                      console.log("rate="+rate);
+                      changeColor();
+                      };
+                    }
+
+                  function rateup(){
+                  breaker();
+                    if (checker==0){
+                      changeColor();
+                    }else{
+                      rate=(rate/2);
+                      console.log("rate="+rate);
+                      clearInterval(nIntervId);
+                      changeColor();
+                    }
+                  }
+                  function stopTextColor(){
+
+
+
+                  breaker();
+                  clearInterval(nIntervId);
+                  checker=0;
+                  }
+                  function goTextColor(){
+                  if(checker==0){
+                  breaker();
+                  changeColor();
+                  }else{
+                  console.log("im going already!");
+                  }
+                  }
+    </script>
+</head>
+<body onload="changeColor();">
+  <div>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+    <div id="d"></div>
+    <div id="e"></div>
+    <div id="f"></div>
+    <div id="g"></div>
+    <div id="h"></div>
+    <div id="i"></div>
+    <div id="j"></div>
+    <div id="k"></div>
+    <div id="l"></div>
+    <div id="m"></div>
+    <div id="n"></div>
+    <div id="o"></div>
+    <div id="p"></div>
+    <div id="q"></div>
+    <div id="r"></div>
+    <div id="s"></div>
+    <div id="t"></div>
+    <div id="u"></div>
+    <div id="v"></div>
+    <div id="w"></div>
+    <div id="x"></div>
+    <div id="y"></div>
+    <div id="z"></div>
+    <div id="aa"></div>
+    <div id="bb"></div>
+    <div id="cc"></div>
+    <div id="dd"></div>
+    <div id="ee"></div>
+    <div id="ff"></div>
+    <div id="gg"></div>
+    <div id="hh"></div>
+    <div id="ii"></div>
+    <div id="jj"></div>
+    <div id="kk"></div>
+    <div id="ll"></div>
+    <div id="mm"></div>
+    <div id="nn"></div>
+    <div id="oo"></div>
+    <div id="pp"></div>
+    <div id="qq"></div>
+    <div id="rr"></div>
+    <div id="ss"></div>
+    <div id="tt"></div>
+    <div id="uu"></div>
+    <div id="vv"></div>
+    <div id="ww"></div>
+    <div id="xx"></div>
+    <div id="yy"></div>
+    <div id="zz"></div>
+    <div id="aaa"></div>
+    <div id="bbb"></div>
+    <div id="ccc"></div>
+    <div id="ddd"></div>
+    <div id="eee"></div>
+    <div id="fff"></div>
+    <div id="ggg"></div>
+    <div id="hhh"></div>
+    <div id="iii"></div>
+    <div id="jjj"></div>
+    <div id="kkk"></div>
+    <div id="lll"></div>
+    <div id="mmm"></div>
+    <div id="nnn"></div>
+    <div id="ooo"></div>
+    <div id="ppp"></div>
+    <div id="qqq"></div>
+    <div id="rrr"></div>
+    <div id="sss"></div>
+    <div id="ttt"></div>
+    <div id="uuu"></div>
+    <div id="vvv"></div>
+    <div id="www"></div>
+    <div id="xxx"></div>
+    <div id="yyy"></div>
+    <div id="zzz"></div>
+    <div id="aaaa"></div>
+    <div id="bbbb"></div>
+    <div id="cccc"></div>
+    <div id="dddd"></div>
+    <div id="eeee"></div>
+    <div id="ffff"></div>
+    <div id="gggg"></div>
+    <div id="hhhh"></div>
+    <div id="iiii"></div>
+    <div id="jjjj"></div>
+    <div id="kkkk"></div>
+    <div id="llll"></div>
+    <div id="mmmm"></div>
+    <div id="nnnn"></div>
+    <div id="oooo"></div>
+    <div id="pppp"></div>
+    <div id="qqqq"></div>
+    <div id="rrrr"></div>
+    <div id="ssss"></div>
+    <div id="tttt"></div>
+    <div id="uuuu"></div>
+    <div id="vvvv"></div>
+    <div id="wwww"></div>
+    <div id="xxxx"></div>
+    <div id="yyyy"></div>
+    <div id="zzzz"></div>
+    <div id="aaaaa"></div>
+    <div id="bbbbb"></div>
+    <div id="ccccc"></div>
+    <div id="ddddd"></div>
+    <div id="eeeee"></div>
+    <div id="fffff"></div>
+    <div id="ggggg"></div>
+    <div id="hhhhh"></div>
+    <div id="iiiii"></div>
+    <div id="jjjjj"></div>
+    <div id="kkkkk"></div>
+    <div id="lllll"></div>
+    <div id="mmmmm"></div>
+    <div id="nnnnn"></div>
+    <div id="ooooo"></div>
+    <div id="ppppp"></div>
+    <div id="qqqqq"></div>
+    <div id="rrrrr"></div>
+    <div id="sssss"></div>
+    <div id="ttttt"></div>
+    <div id="uuuuu"></div>
+    <div id="vvvvv"></div>
+    <div id="wwwww"></div>
+    <div id="xxxxx"></div>
+    <div id="yyyyy"></div>
+    <div id="zzzzz"></div>
+    <div id="aaaaaa"></div>
+    <div id="bbbbbb"></div>
+    <div id="cccccc"></div>
+    <div id="dddddd"></div>
+    <div id="eeeeee"></div>
+    <div id="ffffff"></div>
+    <div id="gggggg"></div>
+    <div id="hhhhhh"></div>
+    <div id="iiiiii"></div>
+    <div id="jjjjjj"></div>
+    <div id="kkkkkk"></div>
+    <div id="llllll"></div>
+    <div id="mmmmmm"></div>
+    <div id="nnnnnn"></div>
+    <div id="oooooo"></div>
+    <div id="pppppp"></div>
+    <div id="qqqqqq"></div>
+    <div id="rrrrrr"></div>
+    <div id="ssssss"></div>
+    <div id="tttttt"></div>
+    <div id="uuuuuu"></div>
+    <div id="vvvvvv"></div>
+    <div id="wwwwww"></div>
+    <div id="xxxxxx"></div>
+    <div id="yyyyyy"></div>
+    <div id="zzzzzz"></div>
+    <div id="aaaaaaa"></div>
+    <div id="bbbbbbb"></div>
+    <div id="ccccccc"></div>
+    <div id="ddddddd"></div>
+    <div id="eeeeeee"></div>
+    <div id="fffffff"></div>
+    <div id="ggggggg"></div>
+    <div id="hhhhhhh"></div>
+    <div id="iiiiiii"></div>
+    <div id="jjjjjjj"></div>
+    <div id="kkkkkkk"></div>
+    <div id="lllllll"></div>
+    <div id="mmmmmmm"></div>
+    <div id="nnnnnnn"></div>
+    <div id="ooooooo"></div>
+    <div id="ppppppp"></div>
+    <div id="qqqqqqq"></div>
+    <div id="rrrrrrr"></div>
+    <div id="sssssss"></div>
+    <div id="ttttttt"></div>
+    <div id="uuuuuuu"></div>
+    <div id="vvvvvvv"></div>
+    <div id="wwwwwww"></div>
+    <div id="xxxxxxx"></div>
+    <div id="yyyyyyy"></div>
+    <div id="zzzzzzz"></div>
+    <div id="aaaaaaaa"></div>
+    <div id="bbbbbbbb"></div>
+    <div id="cccccccc"></div>
+    <div id="dddddddd"></div>
+    <div id="eeeeeeee"></div>
+    <div id="ffffffff"></div>
+    <div id="gggggggg"></div>
+    <div id="hhhhhhhh"></div>
+    <div id="iiiiiiii"></div>
+    <div id="jjjjjjjj"></div>
+    <div id="kkkkkkkk"></div>
+    <div id="llllllll"></div>
+    <div id="mmmmmmmm"></div>
+    <div id="nnnnnnnn"></div>
+    <div id="oooooooo"></div>
+    <div id="pppppppp"></div>
+    <div id="qqqqqqqq"></div>
+    <div id="rrrrrrrr"></div>
+    <div id="ssssssss"></div>
+    <div id="tttttttt"></div>
+    <div id="uuuuuuuu"></div>
+    <div id="vvvvvvvv"></div>
+    <div id="wwwwwwww"></div>
+    <div id="xxxxxxxx"></div>
+    <div id="yyyyyyyy"></div>
+    <div id="zzzzzzzz"></div>
+    <div id="aaaaaaaaa"></div>
+    <div id="bbbbbbbbb"></div>
+    <div id="ccccccccc"></div>
+    <div id="ddddddddd"></div>
+    <div id="eeeeeeeee"></div>
+    <div id="fffffffff"></div>
+    <div id="ggggggggg"></div>
+    <div id="hhhhhhhhh"></div>
+    <div id="iiiiiiiii"></div>
+    <div id="jjjjjjjjj"></div>
+    <div id="kkkkkkkkk"></div>
+    <div id="lllllllll"></div>
+    <div id="mmmmmmmmm"></div>
+    <div id="nnnnnnnnn"></div>
+    <div id="ooooooooo"></div>
+    <div id="ppppppppp"></div>
+    <div id="qqqqqqqqq"></div>
+    <div id="rrrrrrrrr"></div>
+    <div id="sssssssss"></div>
+    <div id="ttttttttt"></div>
+    <div id="uuuuuuuuu"></div>
+    <div id="vvvvvvvvv"></div>
+    <div id="wwwwwwwww"></div>
+    <div id="xxxxxxxxx"></div>
+    <div id="yyyyyyyyy"></div>
+    <div id="zzzzzzzzz"></div>
+    <div id="aaaaaaaaaa"></div>
+    <div id="bbbbbbbbbb"></div>
+    <div id="cccccccccc"></div>
+    <div id="dddddddddd"></div>
+    <div id="eeeeeeeeee"></div>
+    <div id="ffffffffff"></div>
+    <div id="gggggggggg"></div>
+    <div id="hhhhhhhhhh"></div>
+    <div id="iiiiiiiiii"></div>
+    <div id="jjjjjjjjjj"></div>
+    <div id="kkkkkkkkkk"></div>
+    <div id="llllllllll"></div>
+    <div id="mmmmmmmmmm"></div>
+    <div id="nnnnnnnnnn"></div>
+    <div id="oooooooooo"></div>
+    <div id="pppppppppp"></div>
+    <div id="qqqqqqqqqq"></div>
+    <div id="rrrrrrrrrr"></div>
+    <div id="ssssssssss"></div>
+    <div id="tttttttttt"></div>
+    <div id="uuuuuuuuuu"></div>
+    <div id="vvvvvvvvvv"></div>
+    <div id="wwwwwwwwww"></div>
+    <div id="xxxxxxxxxx"></div>
+    <div id="yyyyyyyyyy"></div>
+    <div id="zzzzzzzzzz"></div>
+    <div id="aaaaaaaaaaa"></div>
+    <div id="bbbbbbbbbbb"></div>
+    <div id="ccccccccccc"></div>
+    <div id="ddddddddddd"></div>
+    <div id="eeeeeeeeeee"></div>
+    <div id="fffffffffff"></div>
+    <div id="ggggggggggg"></div>
+    <div id="hhhhhhhhhhh"></div>
+    <div id="iiiiiiiiiii"></div>
+    <div id="jjjjjjjjjjj"></div>
+    <div id="kkkkkkkkkkk"></div>
+    <div id="lllllllllll"></div>
+    <div id="mmmmmmmmmmm"></div>
+    <div id="nnnnnnnnnnn"></div>
+    <div id="ooooooooooo"></div>
+    <div id="ppppppppppp"></div>
+    <div id="qqqqqqqqqqq"></div>
+    <div id="rrrrrrrrrrr"></div>
+    <div id="sssssssssss"></div>
+    <div id="ttttttttttt"></div>
+    <div id="uuuuuuuuuuu"></div>
+    <div id="vvvvvvvvvvv"></div>
+    <div id="wwwwwwwwwww"></div>
+    <div id="xxxxxxxxxxx"></div>
+    <div id="yyyyyyyyyyy"></div>
+    <div id="zzzzzzzzzzz"></div>
+    <div id="aaaaaaaaaaaa"></div>
+    <div id="bbbbbbbbbbbb"></div>
+    <div id="cccccccccccc"></div>
+    <div id="dddddddddddd"></div>
+    <div id="eeeeeeeeeeee"></div>
+    <div id="ffffffffffff"></div>
+    <div id="gggggggggggg"></div>
+    <div id="hhhhhhhhhhhh"></div>
+    <div id="iiiiiiiiiiii"></div>
+    <div id="jjjjjjjjjjjj"></div>
+    <div id="kkkkkkkkkkkk"></div>
+    <div id="llllllllllll"></div>
+    <div id="mmmmmmmmmmmm"></div>
+    <div id="nnnnnnnnnnnn"></div>
+    <div id="oooooooooooo"></div>
+    <div id="pppppppppppp"></div>
+    <div id="qqqqqqqqqqqq"></div>
+    <div id="rrrrrrrrrrrr"></div>
+    <div id="ssssssssssss"></div>
+    <div id="tttttttttttt"></div>
+    <div id="uuuuuuuuuuuu"></div>
+    <div id="vvvvvvvvvvvv"></div>
+    <button onclick="stopTextColor();">stop</button>
+    <button onclick="goTextColor();">go</button>
+    <button onclick="ratedown();">v</button>
+    <button onclick="rateup();">^</button>
+    <button onclick="window.location.href = 'https://index-of-works.glitch.me/rgb/moresmall.html';">-</button>
+    <button onclick="window.location.href = 'https://index-of-works.glitch.me/rgb/small.html';">+</button>
+
+
+  </div>
+
+</body>
+</html>
