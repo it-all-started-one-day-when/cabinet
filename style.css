@@ -2,16 +2,16 @@ div{
    /* background-color: white;*/
     /*border:1px solid black;*/
     text-align: center;
-    line-height: 50px;
+    line-height: 44px;
   }
   .container {
-    height: 100%;
+    height: 99%;
     border: none;
    /* background-color: #69F7BE;*/
     display: grid;
-    grid-template: [main-start]100px [content-start]auto [content-end] 40px[main-end]/ [main-start] 1fr [content-start] 5fr [content-end main-end];
+    grid-template: [main-start]91px [content-start]auto [content-end] 44px[main-end]/ [main-start] 1fr [content-start] 5fr [content-end main-end];
     grid-gap: 3px;
-    margin: 2em 10em 2em 10em;
+    margin: 1em 11em 1em 11em;
   }
   .header{
     grid-column: main; 
@@ -53,6 +53,8 @@ div{
   iframe{
       margin: 20px;
       border: none;
+      width: 66%;
+      height: 444px;
   }
 
   .foot ul{
