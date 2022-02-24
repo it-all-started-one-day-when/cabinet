@@ -2,14 +2,14 @@ div{
    /* background-color: white;*/
     /*border:1px solid black;*/
     text-align: center;
-    line-height: 50px;
+    line-height: 20px;
   }
   .container {
     height: 100%;
     border: none;
    /* background-color: #69F7BE;*/
     display: grid;
-    grid-template: [main-start]100px [content-start]auto [content-end] 40px[main-end]/ [main-start] 1fr [content-start] 5fr [content-end main-end];
+    grid-template: [main-start]50px [content-start]auto [content-end] 40px[main-end]/ [main-start] 1fr [content-start] 5fr [content-end main-end];
     grid-gap: 3px;
     margin: 2em 10em 2em 10em;
   }
@@ -22,6 +22,7 @@ div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
   }
  
   .foot{
@@ -32,8 +33,10 @@ div{
       list-style:none;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: stretch;
+      height:100%;
+      width: 100%;
      
   }
 
@@ -41,7 +44,8 @@ div{
     list-style:none;
     display: flex;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: center;
+    height:100%;
   }
 
   .menu li{
@@ -53,14 +57,19 @@ div{
   iframe{
       margin: 20px;
       border: none;
+      width: 90%;
+      height: 500px;
+      margin:20px;
   }
 
   .foot ul{
+    height:40px;
      list-style: none;
       font-size: 10px;
       font-family: monospace;
       display: flex;
       justify-content: space-around;
+      align-items:end;
   }
 
   #sun{
@@ -69,3 +78,7 @@ div{
       top:0px;
   }
 
+ul{
+  margin:0;
+  padding:0;
+}
