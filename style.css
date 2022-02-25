@@ -71,3 +71,19 @@ div{
       top:0px;
   }
 
+@media screen and (max-width: 600px) {
+   iframe{
+      margin: 0;
+    border: none;
+    width: 90%;
+    height: 500px;
+   }
+   .container{
+      margin: 1vh 1vw 1vh 1vw;
+   }   
+   .menu ul{
+   width: 100%;
+    padding-inline-start: 0;
+   }
+}
+
